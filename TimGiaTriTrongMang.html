@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="text" id="add">
+    <input type="button" onclick="add_Array()" value="Click!">
+</form>
+<s id="res">Ket qua</s>
+<script>
+    function add_Array() {
+        let value = document.getElementById('add').value;
+        let x = [-3, 1, 2, 3, 5, 7, 9];
+        for (let i = 0; i < x.length; i++) {
+            if (value == x[i]) {
+                res = "gia tri cua so can tim la : " + x[i] + "nam o vi tri" + i;
+            }
+        }
+        document.getElementById('res').innerHTML = res;
+    }
+</script>
+</body>
+</html>

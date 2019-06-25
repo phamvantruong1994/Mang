@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="txtValue">
+<input type="button" id="Add" value="Add" onclick="add_array();">
+<input type="button" id="Display" value="Display" onclick="display_array();">
+<input type="button" id="Reverse" value="Reverse" onclick="reverse_array();">
+<p id="res">Hiển thị mảng</p>
+<script>
+    var x = 0;
+    let array = [2, 3, 2, 4, 5, 6];
+
+    function add_array() {
+        array[x] = document.getElementById('txtValue').value;
+        x++;
+    }
+
+    function display_array() {
+        var res = '';
+        for (var i = 0; i < array.length; i++) {
+            res += ' ' + array[i];
+        }
+        document.getElementById("res").innerHTML = res;
+    }
+
+    function reverse_array() {
+        for (var i = 0; i < array.length / 2; i++) {
+            var temp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
+        }
+        display_array();
+    }
+</script>
+</body>
+</html>
